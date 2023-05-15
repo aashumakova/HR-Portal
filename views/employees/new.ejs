@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/employees" method="POST" autocomplete="off">
+    <label>Employee Name:</label>
+    <input type="text" name="name">
+    <label>Employee Title:</label>
+    <select name="title">
+        <option value="RN">RN</option>
+        <option value="LVN">LVN</option>
+        <option value="MA">MA</option>
+    </select>
+    <label>Hire Date:</label>
+    <input type="date" name="hireDate">
+    <label>License Up To Date:</label>
+    <input type="checkbox" name="license" checked>
+    <button type="submit">Save Employee</button>
+</form>
+
+<%- include('../partials/footer') %>

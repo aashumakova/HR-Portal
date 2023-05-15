@@ -1,0 +1,43 @@
+<%- include('../partials/header.ejs') %>
+
+<h3>
+    <%= employee.name %>
+</h3>
+
+<section id="show-page">
+    <div>Employee Name: </div>
+    <div><%= employee.name %></div>
+    <div>Employee Title: </div>
+    <div><%= employee.title %></div>
+    <div>Date Hired: </div>
+    <div><%= employee.dateHired %></div>
+    <div>Nursing License Up To Date: </div>
+    <div><%= employee.license ? 'Yes' : 'No' %></div>
+    
+  </section>
+
+  
+  <br><br><h2>Annual Evaluation</h2>
+  <form id="add-review-form" method="POST"
+    action="/employees/<%= employee._id %>/annualEvaluation">
+    <label>Annual Evaluation:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <input type="submit" value="Add Annual Evaluation">
+  </form>
+
+<!-- <form action="/pokemon/<%= battleTeam.id %>" method="POST">
+    <input type="text" name="name">
+    <button type="submit">Add Pokemon</button>
+</form> -->
+
+<a href="/employeess/<%= employee.id %>/edit">Edit</a>
+
+<%- include('../partials/footer.ejs') %>

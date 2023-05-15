@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h2>All Employees</h2>
+
+<a href="/employees/new">Add a new employee</a>
+
+<ul>
+    <% employees.forEach(function(employee) { %>
+        <li>
+            <form action="/employees/<%= employee.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <a href="/employees/<%= employee.id %>">
+                <%= employee.name %>
+            </a>
+        </li>
+        <% }); %>
+</ul>
+
+<%- include('../partials/footer') %>
