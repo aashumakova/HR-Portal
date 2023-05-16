@@ -1,1 +1,4 @@
-
+img, svg {
+    vertical-align: middle;
+    height: 30px;
+}
