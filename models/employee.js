@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const annualEvaluationSchema = new Schema({
+const evaluationSchema = new Schema({
     content: { 
         type: String, 
         required: true 
@@ -35,13 +35,13 @@ const employeeSchema = new Schema({
     },
     dateHired: {
         type: Date, 
-        required: true 
+        required: true
     },
     license: {
         type: Boolean, 
         default: true
     },
-    annualEvaluation: [annualEvaluationSchema]
+    evaluation: [evaluationSchema]
 }, {
     timestamps: true
 });

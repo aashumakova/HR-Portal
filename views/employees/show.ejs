@@ -19,7 +19,7 @@
   
   <br><br><h2>Annual Evaluation</h2>
   <form id="add-review-form" method="POST"
-    action="/employees/<%= employee._id %>/annualEvaluation">
+    action="/evaluations/employees/<%= employee._id %>/evaluations">
     <label>Annual Evaluation:</label>
     <textarea name="content"></textarea>
     <label>Rating:</label>
@@ -33,11 +33,29 @@
     <input type="submit" value="Add Annual Evaluation">
   </form>
 
-<!-- <form action="/pokemon/<%= battleTeam.id %>" method="POST">
-    <input type="text" name="name">
-    <button type="submit">Add Pokemon</button>
-</form> -->
+<a href="/employees/<%= employee.id %>/edit">Edit</a>
 
-<a href="/employeess/<%= employee.id %>/edit">Edit</a>
+<table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Annual Evaluation</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employee.evaluation.forEach(function(e) { %>
+        <tr>
+            <td class="evaluation-user"><img alt="avatar" src="<%= e.userAvatar %>" src="<%= e.userName %>" referrerpolicy="no-referrer"><%= e.userName %></td>
+            <td><%= e.createdAt.toLocaleDateString() %></td>
+            <td><%= e.content %></td>
+            <td><%= e.rating %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+</table>
+
 
 <%- include('../partials/footer.ejs') %>
