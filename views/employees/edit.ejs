@@ -1,9 +1,22 @@
 <%- include('../partials/header') %>
 
-<form action="/employees/<%= employee.id %>?_method=PUT" method="POST" autocomplete="off">
+<!-- <form action="/employees/<%= employee.id %>?_method=PUT" method="POST" autocomplete="off">
     <input type="text" name="name" value="<%= employee.name %>">
     <input type="checkbox" name="license" value="<%= employee.license ? 'Yes' : 'No' %>">License Up To Date</input>
-    <button type="submit">Update Employee Information</button>
-</form>
+    <button type="submit" class="btn btn-primary">Update Employee Information</button>
+</form> -->
+<div class="container">
+<form id="edit-form" action="/employees/<%= employee.id %>?_method=PUT" method="POST" autocomplete="off">
+    <div class="mb-3">
+      <label for="name" class="form-label">Update Name</label>
+      <input type="text" name="name" class="form-control" id="inputName" aria-describedby="nameHelp" value="<%= employee.name %>">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" name="license" class="form-check-input" id="licenseCheck" value="<%= employee.license ? 'Yes' : 'No' %>">
+      <label class="form-license-label" for="licenseCheck">License Up To Date</label>
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

@@ -5,24 +5,25 @@
 </h3>
 
 <section id="show-page">
-    <div>Employee Name: </div>
-    <div><%= employee.name %></div>
-    <div>Employee Title: </div>
-    <div><%= employee.title %></div>
-    <div>Date Hired: </div>
-    <div><%= employee.dateHired %></div>
-    <div>Nursing License Up To Date: </div>
-    <div><%= employee.license ? 'Yes' : 'No' %></div>
+    <div>Employee Name: <%= employee.name %></div>
+    <div>Employee Title: <%= employee.title %></div>
+    <div>Date Hired: <%= employee.dateHired %></div>
+    <div>Nursing License Up To Date: <%= employee.license ? 'Yes' : 'No' %></div>
     
-  </section>
+</section>
 
+<a class="btn btn-secondary" href="/employees/<%= employee.id %>/edit" role="button">Edit</a>
   
   <br><br><h2>Annual Evaluation</h2>
   <form id="add-review-form" method="POST"
     action="/evaluations/employees/<%= employee._id %>/evaluations">
-    <label>Annual Evaluation:</label>
-    <textarea name="content"></textarea>
-    <label>Rating:</label>
+    <div class="mb-3">
+    <label for="evaluation" class="form-label">Annual Evaluation:</label>
+    <textarea name="content" class="form-control" id="inputContent" aria-describedby="contentHelp"></textarea>
+    <!-- <input type="content" class="form-control" id="inputContent" aria-describedby="contentHelp"> -->
+    </div>
+    <div class="mb-3">
+    <label for="inputRating" class="form-label">Rating:</label>
     <select name="rating">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -30,10 +31,27 @@
       <option value="4">4</option>
       <option value="5" selected>5</option>
     </select>
-    <input type="submit" value="Add Annual Evaluation">
+    </div>
+    <!-- <input type="submit" value="Add Annual Evaluation"> -->
+    <button type="submit" class="btn btn-secondary">Submit</button>
   </form>
 
-<a href="/employees/<%= employee.id %>/edit">Edit</a>
+  <!-- <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form> -->
 
 <table>
     <thead>

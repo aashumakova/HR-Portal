@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/employees" method="POST" autocomplete="off">
+<!-- <form id="new-form" action="/employees" method="POST" autocomplete="off">
     <label>Employee Name:</label>
     <input type="text" name="name">
     <label>Employee Title:</label>
@@ -14,6 +14,35 @@
     <label>License Up To Date:</label>
     <input type="checkbox" name="license" checked>
     <button type="submit">Save Employee</button>
-</form>
+</form> -->
+
+<div class="container">
+    <form id="new-form" action="/employees" method="POST" autocomplete="off">
+    <div class="mb-3">
+      <label for="name" class="name">Employee Name</label>
+      <input type="text" name="name" class="form-control" id="inputName" aria-describedby="nameHelp">
+    </div>
+    <div class="mb-3">
+      <label for="inputTitle" class="form-label">Employee title</label>
+      <select name="title">
+        <option value="RN">RN</option>
+        <option value="LVN">LVN</option>
+        <option value="MA">MA</option>
+    </select>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" name="license" id="license" checked>
+      <label class="form-check-label" for="license">License Up To Date</label>
+    </div>
+    <div class="mb-3">
+      <label>Hire Date:</label>
+      <input type="date" name="dateHired" class="form-date" id="inputDate" >
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+  </div>
+
+  
+
 
 <%- include('../partials/footer') %>

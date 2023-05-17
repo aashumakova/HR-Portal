@@ -1,4 +1,21 @@
+body {
+    background-image: url("6929748.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 img, svg {
     vertical-align: middle;
     height: 30px;
+}
+.evaluation-user img {
+    border-radius: 50%;
+    height: 40px;
+  }
+#new-form {
+    justify-content: center;
+    padding-top: 40px;
+  }
+#edit-form {
+    justify-content: center;
+    padding-top: 40px;
 }
