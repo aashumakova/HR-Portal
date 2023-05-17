@@ -2,6 +2,7 @@ body {
     background-image: url("6929748.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: rgb(217,236,240);
 }
 img, svg {
     vertical-align: middle;
@@ -18,4 +19,22 @@ img, svg {
 #edit-form {
     justify-content: center;
     padding-top: 40px;
+}
+#information{
+    padding-top: 40px;
+}
+#evaluation-table {
+    padding-top: 40px;
+}
+#index {
+    padding-top: 40px; 
+}
+h2 {
+    padding: 40px 40px;
+}
+
+@media (max-width: 1000px) {
+    body {
+    background-size: 1000px 600px;
+    }
 }

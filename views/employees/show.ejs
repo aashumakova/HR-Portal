@@ -1,5 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
+<div class="container" id="information">
 <h3>
     <%= employee.name %>
 </h3>
@@ -9,17 +10,18 @@
     <div>Employee Title: <%= employee.title %></div>
     <div>Date Hired: <%= employee.dateHired %></div>
     <div>Nursing License Up To Date: <%= employee.license ? 'Yes' : 'No' %></div>
-    
 </section>
-
+<br>
 <a class="btn btn-secondary" href="/employees/<%= employee.id %>/edit" role="button">Edit</a>
-  
+
+</div>
+<div class="container">
   <br><br><h2>Annual Evaluation</h2>
   <form id="add-review-form" method="POST"
     action="/evaluations/employees/<%= employee._id %>/evaluations">
     <div class="mb-3">
     <label for="evaluation" class="form-label">Annual Evaluation:</label>
-    <textarea name="content" class="form-control" id="inputContent" aria-describedby="contentHelp"></textarea>
+    <textarea name="content" class="form-control" id="inputContent" style="height: 100px;" aria-describedby="contentHelp"></textarea>
     <!-- <input type="content" class="form-control" id="inputContent" aria-describedby="contentHelp"> -->
     </div>
     <div class="mb-3">
@@ -35,6 +37,7 @@
     <!-- <input type="submit" value="Add Annual Evaluation"> -->
     <button type="submit" class="btn btn-secondary">Submit</button>
   </form>
+</div>
 
   <!-- <form>
     <div class="mb-3">
@@ -52,16 +55,14 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form> -->
-
-<table>
+<br>
+<div class="container">
+<table id="evaluation-table" class="table table-light table-striped table-hover">
     <thead>
-      <tr>
         <th>User</th>
         <th>Date</th>
         <th>Annual Evaluation</th>
         <th>Rating</th>
-        <th></th>
-      </tr>
     </thead>
     <tbody>
       <% employee.evaluation.forEach(function(e) { %>
@@ -74,6 +75,7 @@
       <% }); %>
     </tbody>
 </table>
+</div>
 
 
 <%- include('../partials/footer.ejs') %>
