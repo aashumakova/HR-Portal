@@ -8,6 +8,11 @@ img, svg {
     vertical-align: middle;
     height: 30px;
 }
+#profile {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
 .evaluation-user img {
     border-radius: 50%;
     height: 40px;

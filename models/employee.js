@@ -28,6 +28,9 @@ const employeeSchema = new Schema({
         type: String, 
         required: true 
     },
+    image: {
+        type: String
+    },
     title: { 
         type: String, 
         required: true,
