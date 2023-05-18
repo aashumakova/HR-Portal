@@ -4,29 +4,23 @@
 </div>
 <br>
 
-<!-- <a href="/employees/new">Add a new employee</a> -->
 <div class="container text-center">
     <table class="table table-light table-striped table-hover">
         <thead>
             <th scope="col">Employee</th>
             <th scope="col">Employee details</th>
             <th scope="col">Action</th>
-    </thead>
-        
-            <tbody>
-                <% employees.forEach(function(employee) { %>
+        </thead>
+        <tbody>
+            <% employees.forEach(function(employee) { %>
                 <tr>
                     <td scope="row"><%= employee.name %></td>
                     <td><a class="btn btn-secondary" href="/employees/<%= employee.id %>" role="button">DETAILS</a></td>
                     <td scope="row"><form action="/employees/<%= employee.id %>?_method=DELETE" method="POST"><button class="btn btn-secondary" type="submit">Delete</button>
                     </form></td>
-        
-        </tr>  
-        
-        
-        <% }); %>
-    
-    </tbody>
+                </tr>  
+            <% }); %>
+        </tbody>
     </table>
 </div>
     

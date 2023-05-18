@@ -1,6 +1,6 @@
 const Employee = require('../models/employee')
 
-// get all of the employees of the currently signed in user
+// get all of the employees 
 function index(req, res, next) {
     // in employee theres is a field named user, I search for that user and am passing him/her in
     Employee.find({ })
@@ -57,10 +57,7 @@ function updateEmployeeForm(req, res, next) {
 function update(req, res, next) {
     req.body.license = !! req.body.license
     Employee.findById(req.params.id)
-    // if the current user is not signed in as a manager, they won't be able to update 
     .then(employee => {
-        // if (!employee.user.equals(req.user._id)) throw new Error('Unauthorized user')
-        // if user is the signed in user and is a manager
         return employee.updateOne(req.body)
     })
     .then(() => res.redirect(`/employees/${req.params.id}`))
@@ -70,7 +67,6 @@ function update(req, res, next) {
 function deleteEmployee(req, res, next) {
     Employee.findById(req.params.id)
     .then(employee => {
-        // if (!employee.user.equals(req.user._id)) throw new Error('Unauthorized User')
         return employee.deleteOne()
     })
     .then(() => res.redirect('/employees'))
