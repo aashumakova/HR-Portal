@@ -4,6 +4,9 @@
 ## MVP
 - Please follow this public Trello link: https://trello.com/b/BcC0XDUQ/project-planning
 
+## The link
+- Please follow this link to access the app: https://hrportal.fly.dev/
+
 ## Wireframe
 ![Log In View](Login.png)
 ![List View](List.png)
